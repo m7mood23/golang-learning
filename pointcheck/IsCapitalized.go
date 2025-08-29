@@ -8,8 +8,8 @@ func IsCapitalized(s string) bool {
     checkfirstletter := true  // start checking first letter
     
     for _, char := range s {  // loop through each character
-        if checkfirstletter {  // if we need to check this char
-            if char >= 'a' && char <= 'z' {  // if lowercase
+        if checkfirstletter {  // if we need to check this char 
+            if char >= 'a' && char <= 'z' {  // if lowercase .     * If character is lowercase, return false immediately
                 return false  // fail immediately
             }
             checkfirstletter = false  // stop checking this word
