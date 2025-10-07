@@ -5,23 +5,23 @@ func IsCapitalized(s string) bool {
 		return false
 	}
 
-	checkNext := true
+	isFirstLetter := true
 
 	for _, char := range s {
 
-		if checkNext == true { // if it's the first letter of a word
+		if isFirstLetter == true { // if it's the first letter of a word
 
 			if char >= 'a' && char <= 'z' { // check if lowercase
 				return false
 			}
 
-			checkNext = false
+			isFirstLetter = false
 		}
 
 		if char == ' ' {
-			checkNext = true
+			isFirstLetter = true
 		}
-        
+
 	}
 
 	return true
