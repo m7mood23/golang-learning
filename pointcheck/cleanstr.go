@@ -22,7 +22,7 @@ func main() {
     word := ""
 
     for _, char := range s {
-        if char == ' ' || char == '\t' {
+        if char == ' '{
             if word != "" {
                 words = append(words, word)
                 word = ""
