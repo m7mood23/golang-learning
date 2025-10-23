@@ -10,12 +10,12 @@ func main() {
         return
     }
     
-    s := os.Args[1]
+    input := os.Args[1]
     inSpace := true
     first := true
     
-    for _, char := range s {
-        if char == ' ' {
+    for _, char := range input {
+        if char == ' ' { 
             inSpace = true
         } else {
             if inSpace && !first {
