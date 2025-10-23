@@ -14,20 +14,20 @@ func main() {
     
     s := args[0]
     inSpace := true
-    first := true
+    isFirstWord  := false
     
     for _, char := range s {
         if char == ' ' {
             inSpace = true
         } else {
-            if inSpace && !first {
+            if inSpace == true && isFirstWord  {
                 z01.PrintRune(' ')
                 z01.PrintRune(' ')
                 z01.PrintRune(' ')
             }
             z01.PrintRune(char)
             inSpace = false
-            first = false
+            isFirstWord  = true
         }
     }
     z01.PrintRune('\n')
