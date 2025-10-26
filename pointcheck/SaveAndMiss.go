@@ -1,15 +1,15 @@
 package piscine
 
-func SaveAndMiss(s string, num int) string {
+func SaveAndMiss(arg  string, num int) string {
     if num <= 0 {
-        return s
+        return arg
     }
     
     result := ""
     save := true
     count := 0
     
-    for _, char := range s {
+    for _, char := range arg  {
         if save == true {
             result += string(char)
         }
@@ -23,7 +23,7 @@ func SaveAndMiss(s string, num int) string {
                 save = true
             }
             count = 0
-        }
+        } 
     }
     
     return result
