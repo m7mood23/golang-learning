@@ -1,10 +1,13 @@
 package piscine
 
 func SaveAndMiss(arg  string, num int) string {
+    
+    // on the question(If the int is 0 or a negative number return the original string.) 
     if num <= 0 {
         return arg
     }
-    
+
+    //------------------------------//
     result := ""
     save := true
     count := 0
