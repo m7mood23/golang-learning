@@ -6,9 +6,12 @@ import (
 )
 
 func main() {
-	if len(os.Args) != 3 {
-		return
-	}
+	
+    args:= os.Args[1:]
+
+    if len(args) != 2{
+        return 
+    }
 
 	str1 := os.Args[1]
 	str2 := os.Args[2]
