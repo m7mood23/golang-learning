@@ -2,18 +2,16 @@ package piscine
 
 func SaveAndMiss(arg  string, num int) string {
     
-    // on the question(If the int is 0 or a negative number return the original string.) 
-    if num <= 0 {
+    // Q: if num <= 0 -→ return original string    if num <= 0 {
         return arg
     }
 
-    
     
     result := ""
     count := 0
     save := true
     
-    
+   
     for _, char := range arg  {
         if save == true {
             result += string(char)
