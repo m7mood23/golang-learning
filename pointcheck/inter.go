@@ -1,8 +1,9 @@
 package main
-import (
-	"os"
+
+import ("os"
 	"github.com/01-edu/z01"
 )
+
 func main() {
 	
     args:= os.Args[1:]
@@ -10,7 +11,6 @@ func main() {
     if len(args) != 2{
         return 
     }
-
 
 	s1 := args[0]
 	s2 := args[1]
