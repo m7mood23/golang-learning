@@ -1,12 +1,13 @@
 package piscine
 
 func SaveAndMiss(arg  string, num int) string {
-    
-    // Q: if num <= 0 -→ return original string    if num <= 0 {
+
+    // Q: if num <= 0 → return original string    
+
+    if num <= 0 {
         return arg
     }
 
-    
     result := ""
     count := 0
     save := true
