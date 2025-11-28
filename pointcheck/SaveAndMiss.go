@@ -21,11 +21,7 @@ func SaveAndMiss(arg  string, num int) string {
         count++
         
         if count == num {
-            if save == true {
-                save = false
-            } else {
-                save = true
-            }
+            save = !save
             count = 0
         } 
     }
