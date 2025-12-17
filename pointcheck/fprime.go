@@ -11,30 +11,32 @@ func main() {
 	if len(args) != 1 {
 		return
 	}
+	input := args[0]
 
-	num, err := strconv.Atoi(args[0])
-	if err != nil {
+	// Convert to number
+	num, err := strconv.Atoi(input)
+	if err != nil || num <= 1 {
 		return
 	}
 
-	result := ""
-
-	// Divide by 2 as many times as possible
-	for num%2 == 0 {
-		result += "2*"
-		num = num / 2
+	factors := []int{}
+	
+	for i := 2; i <= num; i++ {
+		// Keep dividing by i while it divides evenly
+		for num%i == 0 {
+			factors = append(factors, i)
+			num = num / i
+		}
 	}
 
-	// Try dividing by 3, 5, 7, 9, 11, etc.
-	for i := 3; i <= num; i++ {
-    for num%i == 0 {
-        result += strconv.Itoa(i) + "*"
-        num = num / i
-    }
-    }
-
-	// Remove the last "*" and print
-	if len(result) > 0 {
-		fmt.Println(result[:len(result)-1])
+	// Print factors with * between them
+	for i, factor := range factors {
+		if i > 0 {
+			fmt.Print("*")
+		}
+		fmt.Print(factor)
 	}
+	fmt.Println()
 }
+
+fprime 
