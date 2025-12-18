@@ -15,21 +15,22 @@ func main() {
 	for _, input := range args {
 		for i, char := range input {
 			
-			// Lowercase letter - make uppercase if last
+			// Lowercase letter
 			if char >= 'a' && char <= 'z' {
 				if i == len(input)-1 {
 					char -= 32
-				}
-				if i < len(input)-1 {
+				} else {
 					if input[i+1] == ' ' {
 						char -= 32
 					}
 				}
 			}
 			
-			// Uppercase letter - make lowercase if NOT last
+			// Uppercase letter
 			if char >= 'A' && char <= 'Z' {
-				if i != len(input)-1 {
+				if i == len(input)-1 {
+					// Keep uppercase (do nothing)
+				} else {
 					if input[i+1] != ' ' {
 						char += 32
 					}
