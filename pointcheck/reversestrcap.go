@@ -29,7 +29,7 @@ func main() {
 			// Uppercase letter
 			if char >= 'A' && char <= 'Z' {
 				if i == len(input)-1 {
-					// Keep uppercase (do nothing)
+					char+= 32
 				} else {
 					if input[i+1] != ' ' {
 						char += 32
