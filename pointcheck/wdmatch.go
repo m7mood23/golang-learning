@@ -7,29 +7,27 @@ import (
 
 func main() {
 	args := os.Args[1:]
-
+	
 	if len(args) != 2 {
 		return
 	}
-
-	str1 := args[0]
-	str2 := args[1]
 	
-    
-    i := 0
-    
-	for _, char := range str2 {
-		if i < len(str1) {
-			if char == rune(str1[i]) {
+	s1 := args[0]
+	s2 := args[1]
+	i := 0
+	
+	for _, char := range s2 {
+		if i < len(s1) {
+			if char == rune(s1[i]) {
 				i++
 			}
 		}
 	}
-
-	if i == len(str1) {
-		for _, char := range str1 {
+	
+	if i == len(s1) {
+		for _, char := range s1 {
 			z01.PrintRune(char)
 		}
-		z01.PrintRune('\n')  // ← MOVED INSIDE!
+		z01.PrintRune('\n')
 	}
 }
