@@ -1,30 +1,35 @@
 package main
 
 import (
-    "os"
-    "github.com/01-edu/z01"
+	"github.com/01-edu/z01"
+	"os"
 )
 
 func main() {
-    if len(os.Args) != 3 { // Check if exactly 2 arguments provided
-        return // Exit if wrong number of arguments
-    }
-    
-    first := os.Args[1]  // Get first string to match
-    second := os.Args[2] // Get second string to search in
-    
-    lookingFor := 0 // Track which letter we need to find next
-    
-    for i := 0; i < len(second); i++ { // Go through each letter in second string
-        if lookingFor < len(first) && second[i] == first[lookingFor] { // Check if current letter matches what we need
-            lookingFor++ // Move to next letter we need to find
-        }
-    }
+	args := os.Args[1:]
 
-    if lookingFor == len(first) { // Check if we found all letters in order
-        for _, char := range first { // Loop through each character in first string
-            z01.PrintRune(char) // Print the character 
-        }
-        z01.PrintRune('\n') // Print newline to end the output
-    }
+	if len(args) != 2 {
+		return
+	}
+
+	str1 := args[0]
+	str2 := args[1]
+	
+    
+    i := 0
+    
+	for _, char := range str2 {
+		if i < len(str1) {
+			if char == rune(str1[i]) {
+				i++
+			}
+		}
+	}
+
+	if i == len(str1) {
+		for _, char := range str1 {
+			z01.PrintRune(char)
+		}
+		z01.PrintRune('\n')  // ← MOVED INSIDE!
+	}
 }
